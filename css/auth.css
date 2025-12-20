@@ -1,0 +1,183 @@
+.auth-container {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.auth-card h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.auth-card p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 32px;
+}
+
+.auth-group {
+    margin-bottom: 22px;
+}
+
+.auth-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.auth-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.auth-actions {
+    margin-top: 24px;
+}
+
+.auth-actions button {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.auth-footer {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Dashboard */
+.dashboard-container {
+    padding: 24px;
+}
+
+.dashboard-card {
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.dashboard-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 24px;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.welcome-card {
+    padding: 28px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.welcome-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-side button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.course-status-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.badge.active {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.badge.paused {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.progress {
+    height: 100%;
+    background: #000;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row,
+    .course-status-row {
+        grid-template-columns: 1fr;
+    }
+}
