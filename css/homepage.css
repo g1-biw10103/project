@@ -1,109 +1,11 @@
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
-body {
-  background-color: #fff;
-  color: #333;
-}
-
-.topbar {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  gap: 16px;
-}
-
-button {
-  all: unset;
-  cursor: pointer;
-}
-
-.icon-button {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.topbar-button {
-  font-weight: 500;
-  font-size: 14px;
-  background: rgba(0, 0, 0, 0);
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: background 0.2s ease-in-out;
-}
-
-.topbar-button:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo-btn img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.3s;
-}
-
-.nav-link:hover {
-  color: #000;
-  font-weight: 600;
-}
-
-.nav-right {
-  margin-left: auto;
-}
-
-.btn-outline {
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-
-.btn-outline:hover {
-  background-color: #f5f5f5;
-  border-color: #333;
-}
-
+/* ---------- Main Container ---------- */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* ---------- Hero Section ---------- */
 .hero-section {
   display: flex;
   background-color: #e6e6e6;
@@ -149,6 +51,7 @@ main {
   filter: grayscale(30%);
 }
 
+/* ---------- Courses Grid ---------- */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -157,37 +60,10 @@ main {
   margin-bottom: 50px;
 }
 
-.card {
-  border: 1px solid #eee;
-  padding: 30px;
-  border-radius: 12px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: box-shadow 0.3s;
-}
-
-.card:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
+/* ---------- Card Enhancements for Homepage ---------- */
 .card-icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
-}
-
-.html-color {
-  color: #e34c26;
-}
-.css-color {
-  color: #264de4;
-}
-.js-color {
-  color: #f7df1e;
-}
-.php-color {
-  color: #777bb3;
 }
 
 .card h3 {
@@ -201,19 +77,4 @@ main {
   color: #666;
   line-height: 1.5;
   margin-bottom: 20px;
-}
-
-.btn-gray {
-  margin-top: auto;
-  background-color: #e0e0e0;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-gray:hover {
-  background-color: #d0d0d0;
 }
