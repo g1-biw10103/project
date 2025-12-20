@@ -1,72 +1,89 @@
-<!DOCTYPE >
-<html>
-  <body>
-    <head>
-      <link rel="stylesheet" href="discussion" />
-      <title>Forum</title>
-      <meta charset="UTF-8" />
-      <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="../css/common.css" />
-      <link rel="stylesheet" href="../css/discussion.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet"
-      />
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/discussion.css">
+</head>
+<body>
+    <!-- Top Navigation (from common.css) -->
     <div class="topbar">
-      <button class="icon-button">
-        <img src="../images/icon.png" width="64px" height="64px" />
-      </button>
-      <button class="topbar-button">Home</button>
-      <button class="topbar-button">Course Catalog</button>
-      <button class="topbar-button">Progress Tracker</button>
-      <button class="topbar-button">Community</button>
-      <div class="nav-right">
-        <a href="#" class="btn-outline">Log in / Sign Up</a>
-      </div>
+        <button class="icon-button">
+            <img src="../images/icon.png" alt="Icon" width="64" height="64">
+        </button>
+        <button class="topbar-button">Home</button>
+        <button class="topbar-button">Course Catalog</button>
+        <button class="topbar-button">Progress Tracker</button>
+        <button class="topbar-button">Community</button>
+        <div class="nav-right">
+            <a href="#" class="btn-outline">Log in / Sign Up</a>
+        </div>
     </div>
 
-    <h1>Discussion Forum</h1>
-    <input class="submit" type="submit" value=" + Post " align="right" /><br />
-
-    <div class="flex-container">
-      <img
-        src="../images/profile-picture.png"
-        alt="Image"
-        height="32"
-        width="32"
-        class="side-image"
-      />
-      <p style="font-size: 30px">
-        <strong>Anyone who wants to join my group?</strong>
-      </p>
-      <p align="right">-Ali bin Abu</p>
-      <br />
+    <!-- Forum Header (from discussion.css) -->
+    <div class="forum-header">
+        <div class="header-content">
+            <h1 class="forum-title">Discussion Forum</h1>
+            <button class="post-button">+ Post</button>
+        </div>
     </div>
 
-    <p>
-      I am making a group for the subject computer architecture project but we
-      are missing 2 people to help fill the group. Do any of you are interested?
-    </p>
-    <input class="submit" type="submit" value=" Send " align="right" /><br />
+    <!-- Main Forum Content -->
+    <div class="forum-container">
+        <!-- Forum Post -->
+        <div class="forum-post">
+            <div class="post-header">
+                <div class="post-avatar">
+                    <img src="../images/profile-picture.png" alt="Profile" width="32" height="32">
+                </div>
+                <div class="post-meta">
+                    <div class="post-author-name">Ali bin Abu</div>
+                    <div class="post-time">Posted 2 hours ago</div>
+                </div>
+            </div>
+            
+            <h2 class="post-title">Anyone who wants to join my group?</h2>
+            
+            <div class="post-content">
+                <p>I am making a group for the subject computer architecture project but we are missing 2 people to help fill the group. Do any of you are interested?</p>
+            </div>
 
-    <div class="message">
-      <input
-        type="text"
-        id="message"
-        name="message"
-        value="Type your message"
-        color="grey"
-      />
-      <input type="submit" value="post" /><br />
-      <input class="button" type="button" value=" UP 21 " />
-      <input class="button" type="button" value=" DOWN 1 " />
-    </div>
+            <!-- Voting System -->
+            <div class="voting-container">
+                <button class="vote-button upvote-button">
+                    <span>↑</span>
+                    <span>UP</span>
+                    <span class="vote-count">21</span>
+                </button>
+                <button class="vote-button downvote-button">
+                    <span>↓</span>
+                    <span>DOWN</span>
+                    <span class="vote-count">1</span>
+                </button>
+            </div>
+        </div>
 
-    <div class="border-text">
-      <p>My name is ....</p>
+        <!-- Reply Section -->
+        <div class="reply-section">
+            <div class="reply-box">
+                <div class="reply-author">Siti Nurhaliza</div>
+                <div class="reply-content">My name is Siti and I'm interested in joining your group!</div>
+                <div class="reply-time">1 hour ago</div>
+            </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="message-input-container">
+            <form class="message-form">
+                <textarea class="message-input-field" placeholder="Type your message here..."></textarea>
+                <button type="submit" class="send-message-button">Send</button>
+            </form>
+        </div>
     </div>
-  </body>
+</body>
 </html>
