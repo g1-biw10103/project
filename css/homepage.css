@@ -2,29 +2,29 @@
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: clamp(15px, 3vw, 20px);
 }
+
 
 /* ---------- Hero Section ---------- */
 .hero-section {
   display: flex;
+  flex-wrap: wrap;
   background-color: #e6e6e6;
-  border-radius: 0;
   overflow: hidden;
   margin-top: 20px;
-  max-height: 350px;
 }
 
 .hero-content {
-  flex: 1;
-  padding: 40px;
+  flex: 1 1 400px;
+  padding: clamp(20px, 5vw, 40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-content h1 {
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 15px;
@@ -32,16 +32,14 @@ main {
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #555;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .hero-image {
-  flex: 1;
-  position: relative;
-  max-height: 350px;
-  overflow: hidden;
+  flex: 1 1 400px;
+  min-height: 220px;
 }
 
 .hero-image img {
@@ -54,27 +52,24 @@ main {
 /* ---------- Courses Grid ---------- */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 4vw, 30px);
+  margin: 50px 0;
 }
 
 /* ---------- Card Enhancements for Homepage ---------- */
 .card-icon {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 22.5rem);
   margin-bottom: 15px;
 }
 
 .card h3 {
-  font-size: 1.4rem;
-  margin-top: 0;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2.5vw, 0.95rem);
   color: #666;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
