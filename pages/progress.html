@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress Tracker</title>
+    <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/progress.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,17 +22,99 @@
       <button class="topbar-button">Progress Tracker</button>
       <button class="topbar-button">Community</button>
     </div>
-    <div class="courses-enrolled-titlebar">
-      <h2>Courses Enrolled</h2>
-      <button class="primary-btn">
+    <div class="section-titlebar">
+      <h2 class="title-lg">Courses Enrolled</h2>
+      <button class="btn-primary">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVR4nOXPMQqAMAxG4e4eQg8itHj/g+gpPil06FC0dhDBfwkJvJckhE8H/ijA3BLU8yt4wYFYC5DKfOmRrNixZUHpM7w9eSMWSKmpG25dEkaDaRgOgxtv8+5FPTkBJx2O2e7WhLIAAAAASUVORK5CYII="
           alt="download--v1"
         />Download Transcript
       </button>
     </div>
-    <div class="courses-enrolled-container">
-      <div class="course-card">bla</div>
+    <div class="courses-enrolled-container box">
+      <div class="course-card card-sm">
+        <div class="course-card-header">
+          <img src="../images/html.png" />
+          <div class="course-card-header-text">
+            <h4 class="title-sm">HTML for Beginners</h4>
+            <p class="text-sm">BIW10103</p>
+          </div>
+        </div>
+        <p class="progress-text course-card-progress-text">70%</p>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" style="width: 70%"></div>
+        </div>
+        <p class="text-body course-card-text">
+          Lessons Completed:
+          <span class="text-highlight">14/20</span>
+        </p>
+        <p class="text-body course-card-text">
+          Time Spent:
+          <span class="text-highlight">5 hours 30 minutes</span>
+        </p>
+        <div class="course-card-buttons">
+          <button class="btn-primary">Continue Course</button>
+          <button class="btn-tertiary">
+            <img
+              width="16"
+              height="16"
+              src="https://img.icons8.com/ios-glyphs/30/external-link.png"
+              alt="external-link"
+            />View Details
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="section-titlebar">
+      <h2 class="title-lg">Badges</h2>
+    </div>
+    <div class="badges-container box">
+      <div class="badge-card">
+        <img src="../images/badge1.png" />
+        <h4 class="title-sm badge-title">Fast Learner</h4>
+        <p class="text-body badge-text">Completed 3 Courses in 1 Month</p>
+      </div>
+      <div class="badge-card">
+        <img src="../images/badge2.png" />
+        <h4 class="title-sm badge-title">Community Supporter</h4>
+        <p class="text-body badge-text">Participated in 5 Forum Discussions</p>
+      </div>
+      <div class="badge-card">
+        <img src="../images/badge3.png" />
+        <h4 class="title-sm badge-title">Top Scorer</h4>
+        <p class="text-body badge-text">Achieved Highest Score in a Course</p>
+      </div>
+    </div>
+    <div class="section-titlebar">
+      <h2 class="title-lg">Certificates</h2>
+    </div>
+    <div class="courses-enrolled-container box">
+      <div class="course-card card-sm box">
+        <div class="course-card-header certificate-header">
+          <img src="../images/medallion.png" />
+          <div class="course-card-header-text">
+            <h4 class="title-sm">CSS Styling Mastery (BIW10204)</h4>
+            <p class="text-sm">Certificate of Completion</p>
+          </div>
+        </div>
+        <p class="text-body course-card-text">
+          Completed on: <span class="text-highlight">March 15, 2024</span>
+        </p>
+        <p class="text-body course-card-text">
+          Certificate ID:
+          <span class="text-highlight">CERT-20240315-XYZ123</span>
+        </p>
+        <p class="text-body course-card-text">
+          Credit hours earned:
+          <span class="text-highlight">8 hours</span>
+        </p>
+        <button class="btn-primary" style="margin-top: 10px">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVR4nOXPMQqAMAxG4e4eQg8itHj/g+gpPil06FC0dhDBfwkJvJckhE8H/ijA3BLU8yt4wYFYC5DKfOmRrNixZUHpM7w9eSMWSKmpG25dEkaDaRgOgxtv8+5FPTkBJx2O2e7WhLIAAAAASUVORK5CYII="
+            alt="download--v1"
+          />Download Certificate
+        </button>
+      </div>
     </div>
   </body>
 </html>

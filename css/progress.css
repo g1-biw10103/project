@@ -1,7 +1,4 @@
-html {
-  font-family: "Inter", sans-serif;
-}
-
+/* ---------- Page Layout ---------- */
 body {
   display: flex;
   flex-direction: column;
@@ -11,90 +8,233 @@ body {
   padding: 5px 40px;
 }
 
-button {
-  all: unset;
-  cursor: pointer;
-}
-
 .topbar {
-  display: flex;
-  justify-content: start;
-  align-items: center;
   width: 100%;
-  gap: 16px;
+  padding: 15px 0;
 }
 
-.icon-button {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.topbar-button {
-  font-weight: 500;
-  font-size: 14px;
-  background: rgba(0, 0, 0, 0);
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: background 0.2s ease-in-out;
-}
-
-.topbar-button:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.courses-enrolled-titlebar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 32px;
-  margin-bottom: 16px;
-}
-
-.courses-enrolled-titlebar h2 {
-  font-weight: 350;
-  font-size: 32px;
-}
-
-.primary-btn {
-  color: white;
-  font-size: 12px;
-  font-weight: 400;
-  background-color: #171717;
-  padding: 10px 16px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.primary-btn:hover {
-  background-color: #2c2c2c;
-}
-
+/* ---------- Course Cards ---------- */
 .courses-enrolled-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
   margin-bottom: 40px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 12px;
 }
 
 .course-card {
+  width: 25vw;
+  min-width: 280px;
+}
+
+.course-card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.course-card-header img {
+  height: 32px;
+  border-radius: 4px;
+}
+
+.course-card-header-text {
+  margin-left: 12px;
+}
+
+.course-card-header-text h4 {
+  margin-bottom: 4px;
+}
+
+.course-card-progress-text {
+  margin-left: auto;
+  margin-bottom: 4px;
+}
+
+.course-card-text {
+  margin-top: 12px;
+}
+
+.course-card-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid #d0d0d0;
-  border-radius: 8px;
-  width: 25vw;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.badges-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-card {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.badge-card img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+}
+
+.badge-title {
+  margin-top: -12px;
+  font-weight: 600;
+}
+
+.badge-text {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.certificate-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.certificate-header img {
+  height: 64px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 5px 16px;
+  }
+
+  .topbar {
+    gap: 8px;
+    padding: 10px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .topbar .icon-button {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+
+  .topbar .icon-button img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .topbar-button {
+    font-size: 12px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-titlebar {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .title-lg {
+    font-size: 24px;
+  }
+
+  .course-card {
+    width: 100%;
+    min-width: unset;
+    overflow: hidden;
+  }
+
+  .course-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .course-card-header-text {
+    margin-left: 0;
+  }
+
+  .course-card-progress-text {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .course-card-buttons {
+    width: 100%;
+  }
+
+  .course-card-buttons .btn-primary,
+  .course-card-buttons .btn-tertiary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .badges-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .badge-card {
+    margin: 0;
+    width: 100%;
+  }
+
+  .badge-card img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .certificate-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .certificate-header img {
+    height: 48px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 5px 12px;
+  }
+
+  .topbar {
+    gap: 4px;
+  }
+
+  .topbar .icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topbar .icon-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topbar-button {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .title-lg {
+    font-size: 20px;
+  }
+
+  .badge-card img {
+    width: 120px;
+    height: 120px;
+  }
 }
