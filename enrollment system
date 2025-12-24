@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Enrollment</title>
+</head>
+<body>
+  <h2>Course Enrollment</h2>
+
+  <p><strong>Course:</strong> Web Development Basics</p>
+  <p><strong>Price:</strong> $49</p>
+
+  <label>Select Payment Method:</label><br>
+  <select id="paymentMethod">
+    <option value="Credit Card">Credit Card</option>
+    <option value="PayPal">PayPal</option>
+  </select>
+  <br><br>
+
+  <button onclick="enroll()">Enroll Now</button>
+
+  <p id="message"></p>
+
+  <script>
+    async function enroll() {
+      const paymentMethod = document.getElementById("paymentMethod").value;
+
+      // 1. Payment
+      const paymentRes = await fetch("http://localhost:3000/api/payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          method: paymentMethod,
+          amount: 49
+        })
+      });
+      const paymentData = await paymentRes.json();
+
+      if (!paymentData.success) {
+        document.getElementById("message").innerText = "Payment failed!";
+        return;
+      }
+
+      // 2. Enrollment
+      await fetch("http://localhost:3000/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: 1,
+          courseId: 101,
+          paymentStatus: "paid"
+        })
+      });
+
+      // 3. Email confirmation
+      await fetch("http://localhost:3000/api/email/confirmation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: "student@example.com",
+          courseId: 101
+        })
+      });
+
+      document.getElementById("message").innerText =
+        "✅ Enrollment successful! Confirmation email sent.";
+    }
+  </script>
+</body>
+</html>
