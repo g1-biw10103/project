@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/auth.css" />
-  </head>
 
-  <body>
-    <div class="topbar">
-      <a href="homepage.html" class="icon-button">
-        <img src="../images/icon.png" width="64px" height="64px" />
-      </a>
-      <a href="homepage.html" class="topbar-button">Home</a>
-      <a href="course-catalog.html" class="topbar-button">Course Catalog</a>
-      <a href="progress.html" class="topbar-button">Progress Tracker</a>
-      <a href="forum.html" class="topbar-button">Community</a>
-      <a href="dashboard.html" class="topbar-button">Dashboard</a>
-      <div class="nav-right">
-        <a href="login.html" class="btn-outline">Log in</a>
-        <a href="signup.html" class="btn-primary">Sign up</a>
-      </div>
+<head>
+  <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="homepage.html" class="icon-button">
+      <img src="../images/icon.png" width="64px" height="64px" />
+    </a>
+    <a href="homepage.html" class="topbar-button">Home</a>
+    <a href="course-catalog.html" class="topbar-button">Course Catalog</a>
+    <a href="progress.html" class="topbar-button">Progress Tracker</a>
+    <a href="forum.html" class="topbar-button">Community</a>
+    <a href="dashboard.html" class="topbar-button">Dashboard</a>
+    <div class="nav-right">
+      <a href="login.html" class="btn-outline">Log in</a>
+      <a href="signup.html" class="btn-primary">Sign up</a>
     </div>
+  </div>
 
-    <div class="dashboard-container">
-      <div class="dashboard-layout">
-        <!-- LEFT MAIN -->
-        <div class="dashboard-main">
-          <!-- Welcome Card -->
-          <div class="dashboard-card welcome-card">
-            <div class="welcome-left">
-              <h2>Hello, Welcome back!</h2>
-              <p>
-                Course “Fundamentals of Web Technology” has 19% progress this
-                week. Keep going!
-              </p>
-            </div>
-
-            <div class="welcome-right">
-              <button class="btn-primary">Continue Learning</button>
-            </div>
+  <div class="dashboard-container">
+    <div class="dashboard-layout">
+      <!-- LEFT MAIN -->
+      <div class="dashboard-main">
+        <!-- Welcome Card -->
+        <div class="dashboard-card welcome-card">
+          <div class="welcome-left">
+            <h2>Hello, Welcome back!</h2>
+            <p>
+              Course “Fundamentals of Web Technology” has 19% progress this
+              week. Keep going!
+            </p>
           </div>
 
-          <div class="course-status-row">
-            <div class="dashboard-card">
-              <h4>Fundamentals of Web Technology</h4>
-              <span class="badge active">Active</span>
-              <span class="small-text">5 left</span>
-            </div>
-
-            <div class="dashboard-card">
-              <h4>HTML & CSS Essentials</h4>
-              <span class="badge paused">Paused</span>
-              <span class="small-text">4 left</span>
-            </div>
-
-            <div class="dashboard-card">
-              <h4>JavaScript Essentials</h4>
-              <span class="badge paused">Paused</span>
-              <span class="small-text">2 left</span>
-            </div>
-          </div>
-
-          <!-- Stats -->
-          <div class="stats-row">
-            <div class="dashboard-card stat">
-              <h3>19</h3>
-              <p>Total Courses</p>
-            </div>
-
-            <div class="dashboard-card stat">
-              <h3>28</h3>
-              <p>Hours this week</p>
-            </div>
-
-            <div class="dashboard-card stat">
-              <p>Course Completion</p>
-              <div class="progress-bar">
-                <div class="progress-bar-fill" style="width: 50%"></div>
-              </div>
-            </div>
+          <div class="welcome-right">
+            <button class="btn-primary">Continue Learning</button>
           </div>
         </div>
 
-        <!-- RIGHT SIDEBAR -->
-        <div class="dashboard-side">
+        <div class="course-status-row">
           <div class="dashboard-card">
-            <h4>Quick Actions</h4>
-            <button class="btn-secondary">View Profile</button>
-            <button class="btn-secondary">Download Transcript</button>
+            <h4>Fundamentals of Web Technology</h4>
+            <span class="badge active">Active</span>
+            <span class="small-text">5 left</span>
           </div>
 
           <div class="dashboard-card">
-            <h4>Certificates</h4>
-            <p>Download your certificates</p>
-            <button class="btn-secondary">Download All</button>
+            <h4>HTML & CSS Essentials</h4>
+            <span class="badge paused">Paused</span>
+            <span class="small-text">4 left</span>
+          </div>
+
+          <div class="dashboard-card">
+            <h4>JavaScript Essentials</h4>
+            <span class="badge paused">Paused</span>
+            <span class="small-text">2 left</span>
           </div>
         </div>
 
-        <div class="enrolled-section">
-          <h3>Enrolled Courses</h3>
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="dashboard-card stat">
+            <h3>19</h3>
+            <p>Total Courses</p>
+          </div>
 
-          <div class="course-row">
-            <div class="dashboard-card">
-              <h4>Fundamentals of Web Technology</h4>
-              <div class="progress-bar">
-                <div class="progress-bar-fill" style="width: 50%"></div>
-              </div>
+          <div class="dashboard-card stat">
+            <h3>28</h3>
+            <p>Hours this week</p>
+          </div>
 
-              <button class="btn-primary">Continue Course</button>
-            </div>
-
-            <div class="card-sm">
-              <h4 class="title-sm">HTML & CSS Essentials</h4>
-              <div class="progress-bar">
-                <div class="progress-bar-fill" style="width: 50%"></div>
-              </div>
-
-              <button class="btn-primary">Continue Course</button>
-            </div>
-
-            <div class="dashboard-card">
-              <h4>JavaScript Essentials</h4>
-              <div class="progress-bar">
-                <div class="progress-bar-fill" style="width: 50%"></div>
-              </div>
-
-              <button class="btn-primary">Start Course</button>
+          <div class="dashboard-card stat">
+            <p>Course Completion</p>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 50%"></div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <div class="dashboard-side">
+        <div class="dashboard-card">
+          <h4>Quick Actions</h4>
+          <button class="btn-secondary">View Profile</button>
+          <button class="btn-secondary">Download Transcript</button>
+        </div>
+
+        <div class="dashboard-card">
+          <h4>Certificates</h4>
+          <p>Download your certificates</p>
+          <button class="btn-secondary">Download All</button>
+        </div>
+      </div>
+
+      <div class="enrolled-section">
+        <h3>Enrolled Courses</h3>
+
+        <div class="course-row">
+          <div class="dashboard-card">
+            <h4>Fundamentals of Web Technology</h4>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 50%"></div>
+            </div>
+
+            <button class="btn-primary">Continue Course</button>
+          </div>
+
+          <div class="card-sm">
+            <h4 class="title-sm">HTML & CSS Essentials</h4>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 50%"></div>
+            </div>
+
+            <button class="btn-primary">Continue Course</button>
+          </div>
+
+          <div class="dashboard-card">
+            <h4>JavaScript Essentials</h4>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 50%"></div>
+            </div>
+
+            <button class="btn-primary">Start Course</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
