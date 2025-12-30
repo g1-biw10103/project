@@ -15,7 +15,6 @@ body {
   padding-bottom: 40px;
 }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -65,7 +64,7 @@ body {
   border-bottom: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .modal-header h2 {
@@ -130,11 +129,12 @@ body {
 }
 
 .modal-footer {
-  padding: 16px 20px;
   border-top: 1px solid #e0e0e0;
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 16px;
 }
 
 .modal-cancel,
@@ -172,8 +172,8 @@ body {
   border-bottom: 1px solid #e0e0e0;
   padding: 20px 40px;
   position: sticky;
-  top: 70px;
-  z-index: 100;
+  top: 0;
+  z-index: 99;
 }
 
 .header-content {
@@ -482,12 +482,10 @@ body {
 @media (max-width: 768px) {
   .forum-header {
     padding: 16px 20px;
-    top: 70px;
+    top: 0;
   }
 
   .header-content {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 12px;
   }
 
@@ -496,8 +494,7 @@ body {
   }
 
   .submit {
-    width: 100%;
-    margin-left: 0;
+    margin-left: auto;
   }
 
   .container {
@@ -528,15 +525,16 @@ body {
   }
 
   .send-btn {
-    width: 100%;
+    align-self: flex-start;
   }
 
   .comment-form {
     flex-direction: column;
+    gap: 8px;
   }
 
   .comment-btn {
-    width: 100%;
+    align-self: flex-start;
   }
 
   .modal-content {
@@ -546,17 +544,30 @@ body {
 
   .post-actions {
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .vote-btn {
     padding: 5px 10px;
     font-size: 11px;
+    flex: 0 1 auto;
+  }
+
+  .modal-footer {
+    flex-direction: row;
+  }
+
+  .modal-cancel,
+  .modal-submit {
+    flex: 1;
+    min-width: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .forum-header {
     padding: 12px 16px;
+    top: 0;
   }
 
   .forum-title {
@@ -568,8 +579,9 @@ body {
   }
 
   .submit {
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-left: auto;
   }
 
   .container {
@@ -578,7 +590,7 @@ body {
   }
 
   .post {
-    padding: 12px;
+    padding: 16px;
     margin-bottom: 16px;
   }
 
@@ -623,16 +635,23 @@ body {
   }
 
   .modal-content {
-    width: 98%;
+    width: 90%;
     margin: 20px auto;
   }
 
   .modal-header {
     padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .modal-header h2 {
     font-size: 18px;
+  }
+
+  .modal-close {
+    align-self: flex-end;
+    margin-top: -8px;
   }
 
   .modal-form {
@@ -659,19 +678,43 @@ body {
   .comment-input {
     padding: 8px;
     font-size: 12px;
+    min-width: 0;
   }
 
   .comment-btn {
     padding: 8px 12px;
     font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .comment-form {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .post-actions {
     gap: 6px;
+    flex-wrap: nowrap;
   }
 
   .vote-btn {
     padding: 4px 8px;
     font-size: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 0px;
+  }
+
+  .modal-cancel,
+  .modal-submit {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13px;
+    box-sizing: border-box;
   }
 }

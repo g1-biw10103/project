@@ -99,6 +99,56 @@ button {
   align-items: center;
 }
 
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .icon-button {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .topbar-button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .nav-right {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .icon-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .topbar-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .nav-right {
+    gap: 4px;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
 /* ---------- Buttons ---------- */
 
 /* Primary Button - Dark filled */
