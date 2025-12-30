@@ -230,7 +230,6 @@
   background: #2d2d2d;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .enrollment-layout {
     gap: 32px;
@@ -292,7 +291,7 @@
   .input-field,
   input,
   select {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px; 
   }
 
   .complete-payment-button,

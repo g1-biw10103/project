@@ -1,4 +1,3 @@
-/* ---------- Main Container ---------- */
 main {
   width: 100%;
   max-width: 100%;
@@ -7,7 +6,6 @@ main {
   box-sizing: border-box;
 }
 
-/* ---------- Hero Section ---------- */
 .hero-section {
   display: flex;
   flex-wrap: wrap;
@@ -47,13 +45,12 @@ main {
 
 .hero-image img {
   width: 100%;
-  height: auto; /* maintain aspect ratio */
+  height: auto;
   max-width: 100%;
   display: block;
-  object-fit: cover; /* optional for cropping */
+  object-fit: cover;
 }
 
-/* ---------- Courses Grid ---------- */
 main .courses-grid {
   display: flex;
   flex-wrap: wrap;
@@ -61,8 +58,6 @@ main .courses-grid {
   margin-top: 0;
 }
 
-/* ---------- Card (FORCE OVERRIDE) ---------- */
-main .courses-grid .card {
   flex: 1 1 calc(25% - 24px);
   max-width: calc(25% - 24px);
   box-sizing: border-box;
@@ -101,16 +96,12 @@ main .courses-grid .card:hover {
   margin-top: auto;
 }
 
-/* ---------- Tablet ---------- */
-@media (max-width: 900px) {
   main .courses-grid .card {
     flex: 1 1 calc(50% - 24px);
     max-width: calc(50% - 24px);
   }
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 600px) {
   .hero-section {
     flex-direction: column;
   }

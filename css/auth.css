@@ -81,7 +81,6 @@
   text-decoration: none;
 }
 
-/* ---------- Mobile Responsive ---------- */
 @media screen and (max-width: 768px) {
   .auth-container {
     min-height: calc(100vh - 60px);
@@ -98,7 +97,7 @@
   }
 
   .auth-group input {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px; 
   }
 
   .auth-actions button {
@@ -143,8 +142,6 @@
   }
 }
 
-/* Removed duplicate reset - already in common.css */
-
 .stats-outer-card,
 .welcome-card,
 .side-card,
@@ -162,7 +159,6 @@
   gap: 25px;
 }
 
-/* Main Content Area */
 .main-content {
   flex: 3;
 }
@@ -188,7 +184,6 @@
   font-size: 14px;
 }
 
-/* Stats Grid Section */
 .stats-outer-card {
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -200,7 +195,7 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 equal columns */
+  
   gap: 15px;
 }
 
@@ -295,14 +290,14 @@
 .progress-bar {
   height: 100%;
   background-color: #1a1a1a;
-  /* Dark bar as seen in original */
+  
   border-radius: 10px;
 }
 
 .progress-text-row {
   display: flex;
   justify-content: flex-end;
-  /* This pushes the content to the right */
+  
   width: 100%;
 }
 
@@ -312,7 +307,6 @@
   margin-top: 5px;
 }
 
-/* Enrolled Courses */
 .enrolled-section h3 {
   margin-bottom: 5px;
 }
@@ -368,7 +362,6 @@
   border-radius: 3px;
 }
 
-/* Sidebar Styles */
 .sidebar {
   flex: 1;
 }
@@ -386,7 +379,6 @@
   margin-bottom: 15px;
 }
 
-/* Donut Chart */
 .donut-chart {
   display: flex;
   align-items: center;
@@ -427,13 +419,11 @@
   color: #888;
 }
 
-/* ---------- Buttons ---------- */
 button {
   all: unset;
-  /* Resets default browser behavior */
+  
   cursor: pointer;
 
-  /* These three lines are the secret to centering the font */
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -444,7 +434,7 @@ button {
   font-weight: 500;
   border-radius: 8px;
   padding: 10px 16px;
-  /* Adjusted to match team's preferred height */
+  
   transition: 0.2s;
   width: auto;
 }
@@ -478,7 +468,6 @@ button {
   gap: 10px;
 }
 
-/* Responsive Breakpoints to match member's code */
 @media screen and (max-width: 768px) {
   body {
     padding: 5px 16px;
@@ -486,10 +475,9 @@ button {
 
   .dashboard-container {
     flex-direction: column;
-    /* Stacks sidebar under main content */
+    
   }
 
-  /* Change 3-column grids to 1-column on mobile */
   .stats-grid,
   .course-cards-grid {
     grid-template-columns: 1fr;
