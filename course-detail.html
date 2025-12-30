@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Details</title>
 
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/course-catalog.css" />
-    <link rel="stylesheet" href="/css/detail-course.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/course-catalog.css" />
+    <link rel="stylesheet" href="css/detail-course.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,19 +18,17 @@
   </head>
   <body>
     <div class="topbar">
-      <a href="/pages/homepage.html" class="icon-button">
-        <img src="/images/icon.png" width="64" height="64" />
+      <a href="index.html" class="icon-button">
+        <img src="images/icon.png" width="64" height="64" />
       </a>
-      <a href="/pages/homepage.html" class="topbar-button">Home</a>
-      <a href="/pages/course-catalog.html" class="topbar-button"
-        >Course Catalog</a
-      >
-      <a href="/pages/progress.html" class="topbar-button">Progress Tracker</a>
-      <a href="/pages/forum.html" class="topbar-button">Community</a>
-      <a href="/pages/dashboard.html" class="topbar-button">Dashboard</a>
+      <a href="index.html" class="topbar-button">Home</a>
+      <a href="course-catalog.html" class="topbar-button">Course Catalog</a>
+      <a href="progress.html" class="topbar-button">Progress Tracker</a>
+      <a href="forum.html" class="topbar-button">Community</a>
+      <a href="dashboard.html" class="topbar-button">Dashboard</a>
       <div class="nav-right">
-        <a href="/pages/login.html" class="btn-outline">Log in</a>
-        <a href="/pages/signup.html" class="btn-primary">Sign up</a>
+        <a href="login.html" class="btn-outline">Log in</a>
+        <a href="signup.html" class="btn-primary">Sign up</a>
       </div>
     </div>
 
@@ -75,7 +73,7 @@
 
       if (courseId) {
         // Load course data
-        fetch("/pages/courses.json")
+        fetch("courses.json")
           .then((response) => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
