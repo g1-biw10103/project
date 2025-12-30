@@ -337,7 +337,64 @@
       const paymentStep = document.getElementById("payment-step");
       const successStep = document.getElementById("success-step");
 
+      // Form validation function for personal details
+      function validatePersonalForm() {
+        const requiredFields = [
+          "first-name",
+          "last-name",
+          "email",
+          "phone",
+          "addr1",
+          "state",
+          "city",
+        ];
+        let isValid = true;
+        let errorMessage = "Please fill in all required fields:";
+
+        for (const fieldId of requiredFields) {
+          const field = document.getElementById(fieldId);
+          if (!field.value.trim()) {
+            isValid = false;
+            errorMessage += "\n- " + field.previousElementSibling.textContent;
+          }
+        }
+
+        if (!isValid) {
+          alert(errorMessage);
+        }
+        return isValid;
+      }
+
+      // Form validation function for payment details
+      function validatePaymentForm() {
+        const cardNumber = document
+          .getElementById("card-number")
+          .value.replace(/\s/g, "");
+        const expiryDate = document.getElementById("expiry-date").value;
+        const cvv = document.getElementById("cvv").value;
+
+        if (!cardNumber || cardNumber.length < 13) {
+          alert("Please enter a valid card number");
+          return false;
+        }
+
+        if (!expiryDate || !/^\d{2}\/\d{2}$/.test(expiryDate)) {
+          alert("Please enter expiry date in MM/YY format");
+          return false;
+        }
+
+        if (!cvv || cvv.length < 3) {
+          alert("Please enter a valid CVV");
+          return false;
+        }
+
+        return true;
+      }
+
       nextButton.addEventListener("click", () => {
+        if (!validatePersonalForm()) {
+          return;
+        }
         personalStep.classList.add("fade-out");
         setTimeout(() => {
           personalStep.classList.remove("active", "fade-out");
@@ -354,6 +411,9 @@
       });
 
       checkoutButton.addEventListener("click", () => {
+        if (!validatePaymentForm()) {
+          return;
+        }
         paymentStep.classList.add("fade-out");
         setTimeout(() => {
           paymentStep.classList.remove("active", "fade-out");
@@ -366,6 +426,22 @@
         let value = e.target.value.replace(/\s/g, "").replace(/\D/g, "");
         let formatted = value.match(/.{1,4}/g)?.join(" ") || "";
         e.target.value = formatted.substring(0, 19);
+      });
+
+      // Expiry date input - MM/YY format with auto slash
+      const expiryInput = document.getElementById("expiry-date");
+      expiryInput.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length >= 2) {
+          value = value.substring(0, 2) + "/" + value.substring(2, 4);
+        }
+        e.target.value = value;
+      });
+
+      // CVV input - numbers only, max 4 digits
+      const cvvInput = document.getElementById("cvv");
+      cvvInput.addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/\D/g, "").substring(0, 4);
       });
 
       const locationsData = {
