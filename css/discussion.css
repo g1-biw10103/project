@@ -437,6 +437,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-top: 15px;
+  flex-wrap: nowrap;
 }
 
 .comment-input {
@@ -720,5 +721,24 @@ body {
     padding: 10px 12px;
     font-size: 13px;
     box-sizing: border-box;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Keep comment input and button on the same row on desktop */
+  .comment-form {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .comment-input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .comment-btn {
+    flex: 0 0 auto;
   }
 }
