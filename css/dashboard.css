@@ -1,9 +1,24 @@
 .dashboard-container {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 40px auto;
   display: flex;
   gap: 32px;
   padding: 0 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0 16px;
+    gap: 16px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0 12px;
+  }
 }
 
 .main-content {
@@ -22,6 +37,22 @@
   margin-bottom: 40px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .welcome-card {
+    padding: 32px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 24px 16px;
+  }
 }
 
 .welcome-card:hover {
@@ -55,6 +86,14 @@
   border-radius: 10px;
   margin-left: 40px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .welcome-card .btn-dark {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
 
 .welcome-card .btn-dark:hover {
@@ -69,12 +108,41 @@
   padding: 32px;
   margin-bottom: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-outer-card {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-outer-card {
+    padding: 16px;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
 }
 
 .stat-item {
@@ -88,6 +156,8 @@
   min-height: 140px;
   transition: all 0.3s ease;
   width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .stat-item:hover {
@@ -97,16 +167,29 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .stat-item {
+    padding: 16px;
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-item {
+    padding: 12px;
+    min-height: 100px;
+  }
+}
+
 .stat-title {
   font-weight: 600;
   font-size: 15px;
   margin-bottom: 16px;
   color: #1a1a1a;
   line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .stat-label {
