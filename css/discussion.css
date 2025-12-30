@@ -100,33 +100,56 @@ body {
 }
 
 .vote-btn {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 4px 8px;
+  min-width: auto;
+  border: 1px solid #ccc;
+  background-color: #f6f7f8;
+  border-radius: 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
+  font-weight: 500;
+  font-size: 11px;
+  color: #818384;
 }
 
-.upvote {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #c8e6c9;
+.vote-btn img {
+  display: block;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
 }
 
-.upvote:hover {
-  background-color: #d4edda;
+.vote-count {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1.2;
 }
 
-.downvote {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ffcdd2;
-}
-
+.upvote:hover,
 .downvote:hover {
-  background-color: #f8d7da;
+  background-color: #e8eaed;
+  border-color: #b3b6b7;
+}
+
+.upvote.active {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+  transform: scale(1.05);
+}
+
+.downvote.active {
+  background-color: #ffebee;
+  border-color: #d32f2f;
+  color: #c62828;
+  transform: scale(1.05);
 }
 
 /* Message Input */

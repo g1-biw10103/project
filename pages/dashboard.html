@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="../css/auth.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet" />
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <div class="topbar">
-    <a href="homepage.html" class="icon-button">
-      <img src="../images/icon.png" width="64px" height="64px" />
-    </a>
-    <a href="homepage.html" class="topbar-button">Home</a>
-    <a href="course-catalog.html" class="topbar-button">Course Catalog</a>
-    <a href="progress.html" class="topbar-button">Progress Tracker</a>
-    <a href="forum.html" class="topbar-button">Community</a>
-    <a href="dashboard.html" class="topbar-button">Dashboard</a>
-    <div class="nav-right">
-      <a href="login.html" class="btn-outline">Log in</a>
-      <a href="signup.html" class="btn-primary">Sign up</a>
+  <body>
+    <!-- NAVBAR -->
+    <div class="topbar">
+      <a href="homepage.html" class="icon-button">
+        <img src="../images/icon.png" width="64px" height="64px" />
+      </a>
+      <a href="homepage.html" class="topbar-button">Home</a>
+      <a href="course-catalog.html" class="topbar-button">Course Catalog</a>
+      <a href="progress.html" class="topbar-button">Progress Tracker</a>
+      <a href="forum.html" class="topbar-button">Community</a>
+      <a href="dashboard.html" class="topbar-button">Dashboard</a>
+      <div class="nav-right">
+        <a href="login.html" class="btn-outline">Log in</a>
+        <a href="signup.html" class="btn-primary">Sign up</a>
+      </div>
     </div>
-  </div>
 
+    <!-- DASHBOARD -->
+    <div class="dashboard-container">
+      <main class="main-content">
+        <section class="welcome-card">
+          <div class="welcome-text">
+            <h1>Hello, Welcome back!</h1>
+            <p>
+              Course "Fundamentals of Web Technology" has 19% progress this
+              week. Keep going!
+            </p>
+          </div>
+          <button class="btn-dark">Continue Learning</button>
+        </section>
 
-  <!-- DASHBOARD -->
-  <div class="dashboard-container">
-    <main class="main-content">
-      <section class="welcome-card">
-        <div class="welcome-text">
-          <h1>Hello, Welcome back!</h1>
-          <p>Course "Fundamentals of Web Technology" has 19% progress this week. Keep going!</p>
-        </div>
-        <button class="btn-dark">Continue Learning</button>
-      </section>
-
-      <div class="stats-outer-card">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <p class="stat-title">Fundamentals of Web Technology</p>
-            <div class="status-row">
-              <span class="badge active"><i class="dot"></i> Active</span>
-              <span class="left-count">5 left</span>
+        <div class="stats-outer-card">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="stat-title">Fundamentals of Web Technology</p>
+              <div class="status-row">
+                <span class="badge active"><i class="dot"></i> Active</span>
+                <span class="left-count">5 left</span>
+              </div>
             </div>
-          </div>
-          <div class="stat-item">
-            <p class="stat-title">HTML & CSS Essentials</p>
-            <div class="status-row">
-              <span class="badge paused">Paused</span>
-              <span class="left-count">4 left</span>
+            <div class="stat-item">
+              <p class="stat-title">HTML & CSS Essentials</p>
+              <div class="status-row">
+                <span class="badge paused">Paused</span>
+                <span class="left-count">4 left</span>
+              </div>
             </div>
-          </div>
-          <div class="stat-item">
-            <p class="stat-title">JavaScript Essentials</p>
-            <div class="status-row">
-              <span class="badge paused">Paused</span>
-              <span class="left-count">2 left</span>
+            <div class="stat-item">
+              <p class="stat-title">JavaScript Essentials</p>
+              <div class="status-row">
+                <span class="badge paused">Paused</span>
+                <span class="left-count">2 left</span>
+              </div>
             </div>
-          </div>
-          <div class="stat-item center-align">
-            <p class="stat-label">Total Courses</p>
-            <div class="circle-stat">
-              19 <span class="notification">2 new</span>
+            <div class="stat-item center-align">
+              <p class="stat-label">Total Courses</p>
+              <div class="circle-stat">
+                19 <span class="notification">2 new</span>
+              </div>
             </div>
-          </div>
-          <div class="stat-item center-align">
-            <p class="stat-label">Hours this week</p>
-            <div class="circle-stat">28</div>
-          </div>
-          <div class="stat-item">
-            <p class="stat-label">Course Completion</p>
-            <div class="progress-container">
-              <div class="progress-bar" style="width: 50%;"></div>
+            <div class="stat-item center-align">
+              <p class="stat-label">Hours this week</p>
+              <div class="circle-stat">28</div>
             </div>
-            <div class="progress-text-row">
-              <span class="progress-percent">50%</span>
+            <div class="stat-item">
+              <p class="stat-label">Course Completion</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <div class="progress-text-row">
+                <span class="progress-percent">50%</span>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <section class="enrolled-section">
-        <h3>Enrolled Courses</h3>
-        <p class="subtitle">Continue where you left off</p>
-        <div class="course-cards-grid">
-          <div class="course-card">
-            <h4>Fundamentals of Web Technology</h4>
-            <p class="level">Beginner</p>
-            <span class="course-pct">5%</span>
-            <div class="course-progress-bar">
-              <div class="fill" style="width: 5%;"></div>
-            </div>
-            <button class="btn-block">Continue Course</button>
-          </div>
-          <div class="course-card">
-            <h4>HTML & CSS Essentials</h4>
-            <p class="level">Beginner</p>
-            <span class="course-pct">34%</span>
-            <div class="course-progress-bar">
-              <div class="fill" style="width: 34%;"></div>
-            </div>
-            <button class="btn-block">Continue Course</button>
-          </div>
-          <div class="course-card">
-            <h4>JavaScript Essentials</h4>
-            <p class="level">Beginner</p>
-            <span class="course-pct">0%</span>
-            <div class="course-progress-bar">
-              <div class="fill" style="width: 0%;"></div>
-            </div>
-            <button class="btn-block">Start Course</button>
           </div>
         </div>
-      </section>
-    </main>
 
-    <aside class="sidebar">
-      <div class="side-card working-hours">
-        <h3>Working Hours</h3>
-        <div class="donut-chart">
-          <svg viewBox="0 0 36 36" class="circular-chart">
-            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="circle" stroke-dasharray="77, 100"
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <text x="18" y="20.35" class="percentage">77%</text>
-          </svg>
-          <div class="hour-text">
-            <strong>21h 30m</strong>
-            <span>Hours spent</span>
+        <section class="enrolled-section">
+          <h3>Enrolled Courses</h3>
+          <p class="subtitle">Continue where you left off</p>
+          <div class="course-cards-grid">
+            <div class="course-card">
+              <h4>Fundamentals of Web Technology</h4>
+              <p class="level">Beginner</p>
+              <span class="course-pct">5%</span>
+              <div class="course-progress-bar">
+                <div class="fill" style="width: 5%"></div>
+              </div>
+              <button class="btn-block">Continue Course</button>
+            </div>
+            <div class="course-card">
+              <h4>HTML & CSS Essentials</h4>
+              <p class="level">Beginner</p>
+              <span class="course-pct">34%</span>
+              <div class="course-progress-bar">
+                <div class="fill" style="width: 34%"></div>
+              </div>
+              <button class="btn-block">Continue Course</button>
+            </div>
+            <div class="course-card">
+              <h4>JavaScript Essentials</h4>
+              <p class="level">Beginner</p>
+              <span class="course-pct">0%</span>
+              <div class="course-progress-bar">
+                <div class="fill" style="width: 0%"></div>
+              </div>
+              <button class="btn-block">Start Course</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="side-card working-hours">
+          <h3>Working Hours</h3>
+          <div class="donut-chart">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path
+                class="circle-bg"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path
+                class="circle"
+                stroke-dasharray="77, 100"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <text x="18" y="20.35" class="percentage">77%</text>
+            </svg>
+            <div class="hour-text">
+              <strong>21h 30m</strong>
+              <span>Hours spent</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="side-card quick-actions">
-        <h3>Quick Actions</h3>
-        <div class="action-buttons">
-          <button class="btn-light">View Profile</button>
-          <button class="btn-dark">Download Transcript</button>
+        <div class="side-card quick-actions">
+          <h3>Quick Actions</h3>
+          <div class="action-buttons">
+            <button class="btn-light">View Profile</button>
+            <button class="btn-dark">Download Transcript</button>
+          </div>
         </div>
-      </div>
 
-      <div class="side-card certificates">
-        <h3>Certificates</h3>
-        <p>Download your certificates</p>
-        <button class="btn-dark full-width">Download All</button>
-      </div>
-    </aside>
-  </div>
-
-</body>
-
+        <div class="side-card certificates">
+          <h3>Certificates</h3>
+          <p>Download your certificates</p>
+          <button class="btn-dark full-width">Download All</button>
+        </div>
+      </aside>
+    </div>
+  </body>
 </html>
