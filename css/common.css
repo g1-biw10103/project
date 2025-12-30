@@ -504,3 +504,16 @@ select:focus {
     font-size: 20px;
   }
 }
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #27ae60;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
