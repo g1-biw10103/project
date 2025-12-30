@@ -36,101 +36,312 @@
     </div>
 
     <div class="container">
-      <div class="post">
-        <div class="post-header">
-          <div class="post-profile">
-            <img
-              src="../images/profile-picture.png"
-              alt="Profile"
-              height="32"
-              width="32"
+      <div id="posts-container"></div>
+    </div>
+
+    <!-- Post Modal -->
+    <div id="postModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Create a New Post</h2>
+          <span class="modal-close">&times;</span>
+        </div>
+        <form id="postForm" class="modal-form">
+          <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input
+              type="text"
+              id="postTitle"
+              placeholder="Enter post title"
+              required
             />
           </div>
-          <div class="post-info">
-            <h2 class="post-title">
-              <strong>Anyone who wants to join my group?</strong>
-            </h2>
-            <p class="post-author">- Ali bin Abu - 2 hours ago</p>
+          <div class="form-group">
+            <label for="postContent">Content</label>
+            <textarea
+              id="postContent"
+              placeholder="Enter your post content"
+              rows="5"
+              required
+            ></textarea>
           </div>
-        </div>
-        <div class="post-content">
-          <p>
-            I am making a group for the subject computer architecture project
-            but we are missing 2 people to help fill the group. Do any of you
-            are interested?
-          </p>
-        </div>
-        <div class="post-actions">
-          <button class="vote-btn upvote" data-vote="up">
-            <img
-              width="12"
-              height="12"
-              src="https://img.icons8.com/metro/26/long-arrow-up.png"
-              alt="upvote"
+          <div class="form-group">
+            <label for="postAuthor">Author Name</label>
+            <input
+              type="text"
+              id="postAuthor"
+              placeholder="Your name"
+              required
             />
-            <span class="vote-count">21</span>
-          </button>
-          <button class="vote-btn downvote" data-vote="down">
-            <img
-              width="12"
-              height="12"
-              src="https://img.icons8.com/metro/26/long-arrow-down.png"
-              alt="downvote"
-            />
-            <span class="vote-count">1</span>
-          </button>
-        </div>
-      </div>
-      <div class="message-input">
-        <form class="message-form">
-          <input
-            type="text"
-            class="message-text"
-            placeholder="Type your message"
-          />
-          <button type="submit" class="send-btn">Send</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="modal-cancel">Cancel</button>
+            <button type="submit" class="modal-submit">Post</button>
+          </div>
         </form>
       </div>
     </div>
 
     <script>
-      const voteButtons = document.querySelectorAll(".vote-btn");
+      const STORAGE_KEY_COMMENTS = "forumComments";
+      const STORAGE_KEY_POSTS = "forumPosts";
 
-      voteButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-          e.preventDefault();
+      function openPostModal() {
+        document.getElementById("postModal").style.display = "block";
+      }
 
-          const isUpvote = this.classList.contains("upvote");
-          const voteCount = this.querySelector(".vote-count");
-          let currentCount = parseInt(voteCount.textContent);
+      function closePostModal() {
+        document.getElementById("postModal").style.display = "none";
+        document.getElementById("postForm").reset();
+      }
 
-          // Get the opposite button
-          const oppositeButton = isUpvote
-            ? this.parentElement.querySelector(".downvote")
-            : this.parentElement.querySelector(".upvote");
-          const oppositeCount = oppositeButton.querySelector(".vote-count");
-          let oppositeValue = parseInt(oppositeCount.textContent);
+      async function loadPosts() {
+        try {
+          const response = await fetch("forum-posts.json");
+          const data = await response.json();
+          const storedPosts = getStoredPosts();
+          const allPosts = [...storedPosts, ...data.posts];
+          allPosts.sort((a, b) => b.id - a.id);
+          renderPosts(allPosts);
+        } catch (error) {
+          console.error("Error loading posts:", error);
+        }
+      }
 
-          // Toggle current button
-          if (this.classList.contains("active")) {
-            // Deactivate
-            this.classList.remove("active");
-            currentCount--;
-          } else {
-            // Activate current
-            this.classList.add("active");
-            currentCount++;
+      // Get stored posts from localStorage
+      function getStoredPosts() {
+        const stored = localStorage.getItem(STORAGE_KEY_POSTS);
+        return stored ? JSON.parse(stored) : [];
+      }
 
-            // Remove opposite active state
-            if (oppositeButton.classList.contains("active")) {
-              oppositeButton.classList.remove("active");
-              oppositeValue--;
-              oppositeCount.textContent = oppositeValue;
+      // Save new post to localStorage
+      function savePost(post) {
+        const storedPosts = getStoredPosts();
+        storedPosts.push(post);
+        localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(storedPosts));
+      }
+
+      // Get comments from localStorage for a post
+      function getPostComments(postId) {
+        const allComments = JSON.parse(
+          localStorage.getItem(STORAGE_KEY_COMMENTS) || "{}"
+        );
+        return allComments[postId] || [];
+      }
+
+      // Save comment to localStorage
+      function saveComment(postId, comment) {
+        const allComments = JSON.parse(
+          localStorage.getItem(STORAGE_KEY_COMMENTS) || "{}"
+        );
+        if (!allComments[postId]) {
+          allComments[postId] = [];
+        }
+        allComments[postId].push(comment);
+        localStorage.setItem(STORAGE_KEY_COMMENTS, JSON.stringify(allComments));
+      }
+
+      // Render posts to the DOM
+      function renderPosts(posts) {
+        const container = document.getElementById("posts-container");
+        container.innerHTML = posts
+          .map((post) => {
+            const storedComments = getPostComments(post.id);
+            const allComments = [...(post.comments || []), ...storedComments];
+            return `
+          <div class="post" data-post-id="${post.id}">
+            <div class="post-header">
+              <div class="post-profile">
+                <img
+                  src="../images/profile-picture.png"
+                  alt="Profile"
+                  height="32"
+                  width="32"
+                />
+              </div>
+              <div class="post-info">
+                <h2 class="post-title">
+                  <strong>${post.title}</strong>
+                </h2>
+                <p class="post-author">- ${post.author} - ${post.timeAgo}</p>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>${post.content}</p>
+            </div>
+            <div class="post-actions">
+              <button class="vote-btn upvote" data-vote="up">
+                <img
+                  width="12"
+                  height="12"
+                  src="https://img.icons8.com/metro/26/long-arrow-up.png"
+                  alt="upvote"
+                />
+                <span class="vote-count">${post.upvotes}</span>
+              </button>
+              <button class="vote-btn downvote" data-vote="down">
+                <img
+                  width="12"
+                  height="12"
+                  src="https://img.icons8.com/metro/26/long-arrow-down.png"
+                  alt="downvote"
+                />
+                <span class="vote-count">${post.downvotes}</span>
+              </button>
+            </div>
+            
+            <div class="comments-section">
+              <div class="comments-list">
+                ${allComments
+                  .map(
+                    (comment) => `
+                  <div class="comment">
+                    <div class="comment-header">
+                      <strong>${comment.author}</strong>
+                      <span class="comment-time">- ${comment.timeAgo}</span>
+                    </div>
+                    <p class="comment-text">${comment.content}</p>
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+              
+              <form class="comment-form" data-post-id="${post.id}">
+                <input
+                  type="text"
+                  class="comment-input"
+                  placeholder="Add a comment..."
+                  required
+                />
+                <button type="submit" class="comment-btn">Comment</button>
+              </form>
+            </div>
+            </div>
+          </div>
+        `;
+          })
+          .join("");
+
+        // Re-attach vote button listeners
+        attachVoteListeners();
+        // Attach comment form listeners
+        attachCommentListeners();
+      }
+
+      // Attach click listeners to vote buttons
+      function attachVoteListeners() {
+        const voteButtons = document.querySelectorAll(".vote-btn");
+
+        voteButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const isUpvote = this.classList.contains("upvote");
+            const voteCount = this.querySelector(".vote-count");
+            let currentCount = parseInt(voteCount.textContent);
+
+            // Get the opposite button
+            const oppositeButton = isUpvote
+              ? this.parentElement.querySelector(".downvote")
+              : this.parentElement.querySelector(".upvote");
+            const oppositeCount = oppositeButton.querySelector(".vote-count");
+            let oppositeValue = parseInt(oppositeCount.textContent);
+
+            // Toggle current button
+            if (this.classList.contains("active")) {
+              // Deactivate
+              this.classList.remove("active");
+              currentCount--;
+            } else {
+              // Activate current
+              this.classList.add("active");
+              currentCount++;
+
+              // Remove opposite active state
+              if (oppositeButton.classList.contains("active")) {
+                oppositeButton.classList.remove("active");
+                oppositeValue--;
+                oppositeCount.textContent = oppositeValue;
+              }
             }
-          }
 
-          voteCount.textContent = currentCount;
+            voteCount.textContent = currentCount;
+          });
         });
+      }
+
+      // Attach comment form listeners
+      function attachCommentListeners() {
+        const commentForms = document.querySelectorAll(".comment-form");
+
+        commentForms.forEach((form) => {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const postId = parseInt(this.getAttribute("data-post-id"));
+            const input = this.querySelector(".comment-input");
+            const commentText = input.value.trim();
+
+            if (commentText) {
+              const newComment = {
+                author: "You",
+                timeAgo: "just now",
+                content: commentText,
+              };
+
+              saveComment(postId, newComment);
+              input.value = "";
+
+              // Reload posts to show new comment
+              loadPosts();
+            }
+          });
+        });
+      }
+
+      // Load posts when page loads
+      loadPosts();
+
+      // Modal event listeners
+      const postBtn = document.querySelector(".submit");
+      const postModal = document.getElementById("postModal");
+      const modalClose = document.querySelector(".modal-close");
+      const modalCancel = document.querySelector(".modal-cancel");
+      const postForm = document.getElementById("postForm");
+
+      postBtn.addEventListener("click", openPostModal);
+
+      modalClose.addEventListener("click", closePostModal);
+      modalCancel.addEventListener("click", closePostModal);
+
+      window.addEventListener("click", function (event) {
+        if (event.target === postModal) {
+          closePostModal();
+        }
+      });
+
+      postForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const title = document.getElementById("postTitle").value;
+        const content = document.getElementById("postContent").value;
+        const author = document.getElementById("postAuthor").value;
+
+        const newPost = {
+          id: Date.now(),
+          title: title,
+          author: author,
+          timeAgo: "just now",
+          content: content,
+          upvotes: 0,
+          downvotes: 0,
+          comments: [],
+        };
+
+        savePost(newPost);
+        closePostModal();
+        loadPosts();
       });
     </script>
   </body>

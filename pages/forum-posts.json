@@ -1,0 +1,88 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Anyone who wants to join my group?",
+      "author": "Ali bin Abu",
+      "timeAgo": "2 hours ago",
+      "content": "I am making a group for the subject computer architecture project but we are missing 2 people to help fill the group. Do any of you are interested?",
+      "upvotes": 21,
+      "downvotes": 1,
+      "comments": [
+        {
+          "id": 1,
+          "author": "Sarah Johnson",
+          "timeAgo": "1 hour ago",
+          "content": "I'm interested! What are the project requirements?"
+        },
+        {
+          "id": 2,
+          "author": "John Doe",
+          "timeAgo": "45 minutes ago",
+          "content": "Count me in! When do we start working on it?"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "How to prepare for the Data Structures exam?",
+      "author": "Sarah Johnson",
+      "timeAgo": "5 hours ago",
+      "content": "Hi everyone! I'm preparing for the upcoming Data Structures exam. Does anyone have study tips or resources to recommend? Any insights would be greatly appreciated!",
+      "upvotes": 15,
+      "downvotes": 0,
+      "comments": [
+        {
+          "id": 1,
+          "author": "Muhammad Hassan",
+          "timeAgo": "4 hours ago",
+          "content": "I recommend going through all the past exam papers. They really help!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Best practices for Web Development projects",
+      "author": "Muhammad Hassan",
+      "timeAgo": "1 day ago",
+      "content": "I've been working on improving my web development skills. What are some best practices you follow when building projects? Would love to hear from the community!",
+      "upvotes": 42,
+      "downvotes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "author": "Emily Chen",
+          "timeAgo": "20 hours ago",
+          "content": "Always use semantic HTML and keep your CSS organized in separate files."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Anyone starting the new Python course?",
+      "author": "Emily Chen",
+      "timeAgo": "1 day ago",
+      "content": "I just started the Python fundamentals course. Is anyone else on the same course? Would be cool to form a study group and share progress together!",
+      "upvotes": 8,
+      "downvotes": 0,
+      "comments": []
+    },
+    {
+      "id": 5,
+      "title": "Need help with Database Design project",
+      "author": "Alex Rodriguez",
+      "timeAgo": "2 days ago",
+      "content": "I'm stuck on the database normalization part of my project. Any experts here who can help me understand the concept better? Much appreciated!",
+      "upvotes": 12,
+      "downvotes": 1,
+      "comments": [
+        {
+          "id": 1,
+          "author": "David Kim",
+          "timeAgo": "1 day ago",
+          "content": "Normalization is about removing redundancy. Start with 1NF, then 2NF, then 3NF."
+        }
+      ]
+    }
+  ]
+}
